@@ -9,7 +9,6 @@ Implementation of Reed Solomon Codes using Jupyter Notebook
     a. Binary EGCD algorithm - used to find the inverse mod n for a given number
     b. CRT algorithm - used to reconstruct a given number given its CRT representation.
     c. Euclid's EGCD algorithm - used in the reconstruction algorithm.    
-6. There are 2 versions of the global setup - one is the correct one, which will always be able to reconstruct the value correctly, as it calculates the number of primes required based on the corruption factor, and keeps on choosing primes until the product becomes > 2MP^2. The other one has a probability to fail.
+6. There are 2 versions of the global setup - one is the correct one, which will always be able to reconstruct the value correctly, as it calculates the number of primes required based on the corruption factor, and keeps on choosing primes until the product becomes > 2MP^2. The other one has a probability to fail, as it takes the number of primes as input, and that many number of primes may not be sufficient for reconstruction.
 7. Once we have the globals ready, we use the CRT algorithm to break down the message a into a1, a2, ..., ak, and then transmit it. Transmitting involves choosing random indices which get corrupted, and giving the corrupted version (b1, b2, ..., bk) to the receiver.
 8. We then follow the reconstruction algorithm as described in Victor Shoup's book.
-
